@@ -197,8 +197,10 @@
         // *60 against mins to retrieve secs from mins
         return (mins * 60) + secs;
       })
+      // used to loop over and add all the converted seconds
       .reduce((total, vidSeconds) => total + vidSeconds);
 
+    // now the seconds that were added together need to be formatted into hours and minutes
     let secondsLeft = seconds;
     const hours = Math.floor(secondsLeft / 3600);
     secondsLeft = secondsLeft % 3600;
